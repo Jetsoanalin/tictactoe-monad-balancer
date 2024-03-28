@@ -1,0 +1,136 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+    88.7deg,
+    rgb(207, 150, 207) -2.4%,
+    rgb(107, 116, 179) 102%
+  );
+  color: #fff;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+}
+
+.cell {
+  background-color: #fff;
+  border: 2px solid #27296d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3 ease;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 6px;
+  border-radius: 20px;
+}
+
+.cell:hover {
+  background-color: #dcd6f7;
+}
+
+.game-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #fff;
+}
+
+button {
+  background-color: #27296d;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border-radius: 30px;
+  padding: 10px;
+  margin-top: 20px;
+  border-style: none;
+}
+
+button:hover {
+  background-color: rgb(107, 116, 179);
+  color: #dcd6f7;
+}
+
+.cell.X {
+  background: url("https://cryptologos.cc/logos/balancer-bal-logo.png")
+    50% 50% no-repeat;
+  background-size: 80px;
+  background-color: #fff;
+  display: flex;
+}
+
+.cell.O {
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDrG413ZlNjgWjw0tY8LK44UCKxlv-azeOiQ&usqp=CAU")
+    50% 50% no-repeat;
+  background-size: 80px;
+  background-color: #fff;
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .cell {
+    width: 60px;
+    height: 60px;
+    border: 1.3px solid #27296d;
+  }
+
+  #game-board {
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
+  }
+
+  .cell.X {
+    background: url("https://cryptologos.cc/logos/balancer-bal-logo.png")
+      50% 50% no-repeat;
+    background-size: 40px;
+    background-color: #fff;
+    display: flex;
+  }
+
+  .cell.O {
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDrG413ZlNjgWjw0tY8LK44UCKxlv-azeOiQ&usqp=CAU")
+      50% 50% no-repeat;
+    background-size: 40px;
+    background-color: #fff;
+    display: flex;
+  }
+}
+
+@media (max-width: 230px) {
+  body {
+    background: white;
+  }
+
+  #game-board {
+    display: none;
+  }
+
+  button {
+    display: none;
+  }
+  h1 {
+    display: none;
+  }
+  .game-message {
+    display: none;
+  }
+
+  h1#hiddenMessage {
+    display: flex;
+    color: black;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
